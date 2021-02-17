@@ -15,7 +15,7 @@ import os
 
 class Worker1(QThread):
     ImageUpdate = pyqtSignal(QImage)
-    list_persons = pyqtSignal(int,int,int)
+    list_persons = pyqtSignal(int,int,int,int,np.ndarray)
     #============= detect functions ============================================================================
     def detect_and_predict_mask(self,frame, faceNet, maskNet):
         # grab the dimensions of the frame and then construct a blob
@@ -169,12 +169,9 @@ class Worker1(QThread):
             Pic = ConvertToQtFormat.scaled(860, 640, Qt.KeepAspectRatio)
             self.ImageUpdate.emit(Pic)
             faces_mask = len(preds) - faces_without_mask
-            self.list_persons.emit(len(preds),faces_without_mask,faces_mask)
+            self.list_persons.emit(len(preds),faces_without_mask,faces_mask, dt,FlippedImage)
 
-            if faces_without_mask > dt:
-                print("enviando a DB")
             dt = faces_without_mask                
-
             faces_without_mask = 0
 
     

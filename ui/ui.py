@@ -4,15 +4,17 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import cv2
 import os
+import time
+from datetime import datetime
 
 from models.detect import Worker1
 
 class MainWindow (QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
-        path_ui = os.getcwd()
-        path = os.path.join(path_ui,r"ui\dashboard.ui")
-        uic.loadUi(path,self)
+        self.path = os.getcwd()
+        path_ui = os.path.join(self.path,r"ui\dashboard.ui")
+        uic.loadUi(path_ui,self)
 
         self.Worker1 = Worker1()
         self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
@@ -35,8 +37,20 @@ class MainWindow (QMainWindow):
     def CancelFeed(self):
         self.Worker1.stop()
 
-    def DetectUpdate(self, t,s,c):
+    def DetectUpdate(self, t,s,c,dt,image):
         self.detect_person.setText(str(t))
         self.no_mask_person.setText(str(s))
         self.mask_person.setText(str(c))
+
+        if s > dt:
+            #name = str(time.time())
+            name = str(datetime.now())
+            name = name.replace(':','-')
+            dir = os.path.join(self.path,r"saved/")
+            img = image.copy()
+            img = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+            cv2.imwrite(dir+name+'.jpg',img)
+            #cv2.imshow('saved',img)
+            print('saved: ' + name)
+            
     
