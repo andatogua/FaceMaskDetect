@@ -8,6 +8,7 @@ import time
 from datetime import datetime
 
 from .detect import Worker1
+from models.db.db import SaveLog
 
 class MainWindow (QMainWindow):
     def __init__(self):
@@ -22,7 +23,6 @@ class MainWindow (QMainWindow):
         self.start_cam.clicked.connect(self.start_stream)
         self.stop_cam.clicked.connect(self.stop_stream)
 
-        self.statusBar().showMessage('Presione Iniciar para comenzar con las detecciones')
 
     def start_stream(self):
         self.Worker1.start()
@@ -46,15 +46,16 @@ class MainWindow (QMainWindow):
         if s > dt:
             #name = str(time.time())
             name = str(datetime.now())
-            name = name.replace(':','-')
             folder = 'saved'
             dir = os.path.join(self.path,folder)
             if not os.path.exists(dir):
                 os.mkdir(dir)
-            self.SaveDetection(image,dir,name)
+            if SaveLog(s,t,name):
+                self.SaveDetection(image,dir,name)
 
     
     def SaveDetection(self, image, dir,name):
+        name = name.replace(':','-')
         img = image.copy()
         img = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
         cv2.imwrite(dir+'/'+name+'.jpg',img)
