@@ -156,7 +156,7 @@ class Worker1(QThread):
 
             dt = faces_without_mask                
             faces_without_mask = 0
-            time.sleep(0.5)
+            #time.sleep(0.5)
 
     
 

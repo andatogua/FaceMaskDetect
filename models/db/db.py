@@ -11,6 +11,7 @@ def PrepareDatabase():
                 return True
 
 
+
 def SaveLog(nomask,total,date):
     q = QSqlQuery()
     if (q.prepare("insert into log (nomask,total,date) values (" + str(nomask) + "," + str(total) + ",datetime('" + date + "'))")):
@@ -19,3 +20,22 @@ def SaveLog(nomask,total,date):
     else:
         print(q.lastError().text())
 
+def GetInfToday(now):
+    PrepareDatabase()
+    q = QSqlQuery()
+    if q.prepare("SELECT count(date) FROM log WHERE SUBSTR(date, 9, 2) = '" + now +"';"):
+        if q.exec():
+            while q.next():
+                return q.value(0)
+        else:
+            return 0
+
+def GetInfYesterday(yesterday):
+    PrepareDatabase()
+    q = QSqlQuery()
+    if q.prepare("SELECT count(date) FROM log WHERE SUBSTR(date, 9, 2) = '" + yesterday +"';"):
+        if q.exec():
+            while q.next():
+                return q.value(0)
+        else:
+            return 0

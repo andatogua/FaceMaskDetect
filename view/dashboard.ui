@@ -134,7 +134,7 @@ font-weight: bold;
       <rect>
        <x>10</x>
        <y>60</y>
-       <width>131</width>
+       <width>171</width>
        <height>16</height>
       </rect>
      </property>
@@ -147,7 +147,7 @@ font-weight: bold;
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>131</width>
+       <width>171</width>
        <height>16</height>
       </rect>
      </property>
@@ -231,8 +231,8 @@ font-weight: bold;
       <rect>
        <x>40</x>
        <y>20</y>
-       <width>101</width>
-       <height>16</height>
+       <width>51</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -245,7 +245,7 @@ font-weight: bold;
        <x>190</x>
        <y>20</y>
        <width>47</width>
-       <height>13</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
@@ -271,7 +271,7 @@ font-weight: bold;
        <x>30</x>
        <y>50</y>
        <width>47</width>
-       <height>13</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -283,14 +283,17 @@ font-weight: bold;
      <property name="text">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
-    <widget class="QLabel" name="infrac_yesterdey">
+    <widget class="QLabel" name="infrac_yesterday">
      <property name="geometry">
       <rect>
        <x>180</x>
        <y>50</y>
        <width>47</width>
-       <height>13</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -301,6 +304,9 @@ font-weight: bold;
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
@@ -308,9 +314,9 @@ font-weight: bold;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>520</y>
+      <y>500</y>
       <width>281</width>
-      <height>101</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -334,7 +340,7 @@ border-radius:5px;
        <x>0</x>
        <y>0</y>
        <width>279</width>
-       <height>99</height>
+       <height>119</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -346,7 +352,7 @@ border-radius:5px;
         <x>10</x>
         <y>10</y>
         <width>261</width>
-        <height>80</height>
+        <height>101</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout"/>
@@ -357,7 +363,7 @@ border-radius:5px;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>240</y>
+      <y>220</y>
       <width>281</width>
       <height>271</height>
      </rect>
@@ -456,7 +462,7 @@ color: #00a2f5;
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <property name="styleSheet">

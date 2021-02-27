@@ -8,7 +8,7 @@ import time
 from datetime import datetime
 
 from .detect import Worker1
-from models.db.db import SaveLog
+from models.db.db import SaveLog,GetInfToday,GetInfYesterday
 
 class MainWindow (QMainWindow):
     def __init__(self):
@@ -23,6 +23,25 @@ class MainWindow (QMainWindow):
         self.start_cam.clicked.connect(self.start_stream)
         self.stop_cam.clicked.connect(self.stop_stream)
 
+        #self.scrollArea.setGeometry(QRect(10, 520, 281, 151))
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(100)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.gridLayoutWidget = QWidget()
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.gridLayout = QGridLayout(self.gridLayoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.scrollArea.setWidget(self.gridLayoutWidget)
+
+        self.LoadThumbnail()
+        self.SetInfrac()
+        
 
     def start_stream(self):
         self.Worker1.start()
@@ -60,3 +79,60 @@ class MainWindow (QMainWindow):
         img = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
         cv2.imwrite(dir+'/'+name+'.jpg',img)
         self.statusBar().showMessage('Última detección: {}'.format(name))
+        self.LoadThumbnail()
+        self.SetInfrac()
+
+
+    def LoadThumbnail(self):
+        dir = os.path.join(self.path,'saved/')
+        files = [ f for f in os.listdir(dir)]
+        files = sorted(files)
+        col = 0
+        
+        self.gridLayout.setVerticalSpacing(30)
+        for file in reversed(files):
+            #if files.index(file) > len(files) - 10 :
+            print(files.index(file),file)
+            img_label = QLabel()
+            img_label.setAlignment(Qt.AlignCenter)
+            file_path=os.path.join(dir,file)
+            pixmap = QPixmap(file_path)
+            pixmap = pixmap.scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            img_label.setPixmap(pixmap)
+            thumbnail = QBoxLayout(QBoxLayout.TopToBottom)
+            thumbnail.addWidget(img_label)
+            self.gridLayout.addLayout(thumbnail,0,col, Qt.AlignCenter)
+
+            img_label.mousePressEvent = \
+                lambda e, \
+                index=files.index(file), \
+                file_path=file_path: \
+                    self.on_thumbnail_click(file_path)
+            
+            if files.index(file) == 10: break
+            
+            col += 1
+        
+
+    def on_thumbnail_click(self, file_path):
+        self.pixmap = QPixmap(file_path)
+        self.pixmap = self.pixmap.scaled(271, 271, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.img_infrac.setPixmap(self.pixmap)
+
+
+    def GetDays(self):
+        date = str(datetime.now())
+        now = date[8:10]
+        now_int = int(now)
+        yesterday_int = now_int - 1
+        yesterday = str(yesterday_int)
+        return now,yesterday
+
+    def SetInfrac(self):
+        now,yesterday=self.GetDays()
+        n = GetInfToday(now)
+        y = GetInfYesterday(yesterday)
+        self.infrac_today.setText(str(n))
+        self.infrac_yesterday.setText(str(y))
+
+       
