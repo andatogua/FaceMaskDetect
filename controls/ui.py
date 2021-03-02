@@ -10,12 +10,16 @@ from datetime import datetime
 from .detect import Worker1
 from models.db.db import SaveLog,GetInfToday,GetInfYesterday
 
+from .report import ReportWindow
+
 class MainWindow (QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.path = os.getcwd()
         path_ui = os.path.join(self.path,r"view/dashboard.ui")
         uic.loadUi(path_ui,self)
+
+        self.move(0,0)
 
         self.Worker1 = Worker1()
         self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
@@ -41,6 +45,8 @@ class MainWindow (QMainWindow):
 
         self.LoadThumbnail()
         self.SetInfrac()
+
+        self.actionReportes.triggered.connect(self.OpenReport)
         
 
     def start_stream(self):
@@ -92,7 +98,6 @@ class MainWindow (QMainWindow):
         self.gridLayout.setVerticalSpacing(30)
         for file in reversed(files):
             #if files.index(file) > len(files) - 10 :
-            print(files.index(file),file)
             img_label = QLabel()
             img_label.setAlignment(Qt.AlignCenter)
             file_path=os.path.join(dir,file)
@@ -136,3 +141,6 @@ class MainWindow (QMainWindow):
         self.infrac_yesterday.setText(str(y))
 
        
+    def OpenReport(self):
+        r = ReportWindow()
+        r.exec_()
