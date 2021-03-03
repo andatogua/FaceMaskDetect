@@ -5,7 +5,7 @@ from PyQt5.QtCore import *
 import cv2
 import os
 import time
-from datetime import datetime
+from datetime import datetime,date,timedelta
 
 from .detect import Worker1
 from models.db.db import SaveLog,GetInfToday,GetInfYesterday
@@ -126,19 +126,21 @@ class MainWindow (QMainWindow):
 
 
     def GetDays(self):
-        date = str(datetime.now())
-        now = date[8:10]
-        now_int = int(now)
-        yesterday_int = now_int - 1
-        yesterday = str(yesterday_int)
+        now = date.today()
+        t = now + timedelta(-1)
+        yesterday = str(t)
+        now = str(now)
         return now,yesterday
 
     def SetInfrac(self):
         now,yesterday=self.GetDays()
-        n = GetInfToday(now)
-        y = GetInfYesterday(yesterday)
-        self.infrac_today.setText(str(n))
-        self.infrac_yesterday.setText(str(y))
+        n,nn,tn = GetInfToday(now)
+        print(tn)
+        y,ny,ty = GetInfYesterday(yesterday)
+        if nn != None and nn != "":
+            self.infrac_today.setText(str(n)+' ('+str((nn/tn)*100)+'%)')
+        if ny != None and ny != "":
+            self.infrac_yesterday.setText(str(y)+' ('+str((ny/ty)*100)+'%)')
 
        
     def OpenReport(self):

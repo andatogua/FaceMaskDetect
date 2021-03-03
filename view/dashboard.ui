@@ -105,12 +105,12 @@ font-weight: bold;
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>171</width>
+       <width>191</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Número de personas detectadas:</string>
+      <string>Personas detectadas:</string>
      </property>
     </widget>
     <widget class="QLabel" name="detect_person">
@@ -224,7 +224,7 @@ font-weight: bold;
 }</string>
     </property>
     <property name="title">
-     <string>Infracciones</string>
+     <string>Detecciones (% Infracciones)</string>
     </property>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
@@ -268,10 +268,10 @@ font-weight: bold;
     <widget class="QLabel" name="infrac_today">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>6</x>
        <y>50</y>
-       <width>47</width>
-       <height>16</height>
+       <width>111</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -290,10 +290,10 @@ font-weight: bold;
     <widget class="QLabel" name="infrac_yesterday">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>146</x>
        <y>50</y>
-       <width>47</width>
-       <height>16</height>
+       <width>111</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="font">

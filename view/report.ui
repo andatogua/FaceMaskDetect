@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>Reportes</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white</string>
+  </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
@@ -56,7 +59,7 @@ font-weight: bold;
    <property name="title">
     <string>Infractores</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -180,7 +183,7 @@ font-weight: bold;
    <property name="title">
     <string>Detecciones</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -344,18 +347,7 @@ font-weight: bold;
    <property name="title">
     <string>Histórico</string>
    </property>
-   <widget class="QWidget" name="gridLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>941</width>
-      <height>601</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout_2"/>
-   </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>3</x>
@@ -406,7 +398,7 @@ font-weight: bold;
         <string>Hoy</string>
        </property>
        <property name="checked">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -430,6 +422,9 @@ font-weight: bold;
        </property>
        <property name="text">
         <string>Última semana</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -483,6 +478,17 @@ font-weight: bold;
       </spacer>
      </item>
     </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>59</y>
+      <width>941</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5"/>
    </widget>
   </widget>
  </widget>

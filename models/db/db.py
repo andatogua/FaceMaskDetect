@@ -32,10 +32,12 @@ def GetInfToday(now):
     conn = CreateConn()
     if conn.open():
         q = QSqlQuery()
-        if q.prepare("SELECT count(date) FROM log WHERE SUBSTR(date, 9, 2) = '" + now +"';"):
+        if q.prepare("SELECT count(date), sum(nomask), sum(total) FROM log WHERE date(date) = '" + now +"';"):
             if q.exec():
                 while q.next():
-                   return q.value(0)
+                   return q.value(0),q.value(1),q.value(2)
+                else:
+                    return 0,0,0
             else:
                 return 0
     conn.close()
@@ -44,10 +46,12 @@ def GetInfYesterday(yesterday):
     conn = CreateConn()
     if conn.open():
         q = QSqlQuery()
-        if q.prepare("SELECT count(date) FROM log WHERE SUBSTR(date, 9, 2) = '" + yesterday +"';"):
+        if q.prepare("SELECT count(date), sum(nomask), sum(total) FROM log WHERE date(date) = '" + yesterday +"';"):
             if q.exec():
                 while q.next():
-                    return q.value(0)
+                    return q.value(0),q.value(1),q.value(2)
+                else:
+                    return 0,0,0
             else:
                 return 0
     conn.close()
@@ -60,6 +64,20 @@ def GetTotals():
             if q.exec():
                 while q.next():
                     return q.value(0),q.value(1)
+            else:
+                return 0
+    conn.close()
+
+def GetLastData(day):
+    data = []
+    conn = CreateConn()
+    if conn.open():
+        q = QSqlQuery()
+        if q.prepare("SELECT sum(nomask),sum(total),date(date) FROM log WHERE date(date) >= '"+day+"' GROUP BY date(date);"):
+            if q.exec():
+                while q.next():
+                    data.append([q.value(0),q.value(1),q.value(2)])
+                return data
             else:
                 return 0
     conn.close()
