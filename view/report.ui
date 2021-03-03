@@ -384,7 +384,7 @@ font-weight: bold;
       </spacer>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton">
+      <widget class="QRadioButton" name="today_radio">
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
@@ -416,7 +416,7 @@ font-weight: bold;
       </spacer>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton_2">
+      <widget class="QRadioButton" name="week_radio">
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
@@ -442,7 +442,7 @@ font-weight: bold;
       </spacer>
      </item>
      <item>
-      <widget class="QRadioButton" name="radioButton_3">
+      <widget class="QRadioButton" name="month_radio">
        <property name="cursor">
         <cursorShape>PointingHandCursor</cursorShape>
        </property>

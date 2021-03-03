@@ -114,7 +114,7 @@ class MainWindow (QMainWindow):
                 file_path=file_path: \
                     self.on_thumbnail_click(file_path)
             
-            if files.index(file) == 10: break
+            if col == 10: break
             
             col += 1
         
@@ -138,9 +138,9 @@ class MainWindow (QMainWindow):
         print(tn)
         y,ny,ty = GetInfYesterday(yesterday)
         if nn != None and nn != "":
-            self.infrac_today.setText(str(n)+' ('+str((nn/tn)*100)+'%)')
+            self.infrac_today.setText("{0} ({1:.1f}%)".format(n,((nn/tn)*100)))
         if ny != None and ny != "":
-            self.infrac_yesterday.setText(str(y)+' ('+str((ny/ty)*100)+'%)')
+            self.infrac_yesterday.setText("{0} ({1:.1f}%)".format(y,((ny/ty)*100)))
 
        
     def OpenReport(self):
