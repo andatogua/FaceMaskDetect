@@ -37,9 +37,9 @@ def GetInfToday(now):
                 while q.next():
                    return q.value(0),q.value(1),q.value(2)
                 else:
-                    return 0,0,0
-            else:
-                return 0
+                    return None,None,None
+        else:
+            return None,None,None
     conn.close()
 
 def GetInfYesterday(yesterday):
@@ -51,9 +51,9 @@ def GetInfYesterday(yesterday):
                 while q.next():
                     return q.value(0),q.value(1),q.value(2)
                 else:
-                    return 0,0,0
-            else:
-                return 0
+                    return None,None,None
+        else:
+            return None,None,None
     conn.close()
 
 def GetTotals():

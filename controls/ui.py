@@ -59,24 +59,21 @@ class MainWindow (QMainWindow):
         self.statusBar().showMessage('Presione Iniciar para comenzar con las detecciones')
 
 
-    def ImageUpdateSlot(self, Image):
+    def ImageUpdateSlot(self, Image, t,s,c):
         self.cam_label.setPixmap(QPixmap.fromImage(Image))
-
-
-    def DetectUpdate(self, t,s,c,dt,image):
         self.detect_person.setText(str(t))
         self.no_mask_person.setText(str(s))
         self.mask_person.setText(str(c))
 
-        if s > dt:
-            #name = str(time.time())
-            name = str(datetime.now())
-            folder = 'saved'
-            dir = os.path.join(self.path,folder)
-            if not os.path.exists(dir):
-                os.mkdir(dir)
-            if SaveLog(s,t,name):
-                self.SaveDetection(image,dir,name)
+
+    def DetectUpdate(self,dt,ni,image,name):
+        name = str(datetime.now())
+        folder = 'saved'
+        dir = os.path.join(self.path,folder)
+        if not os.path.exists(dir):
+            os.mkdir(dir)
+        if SaveLog(ni,dt,name):
+            self.SaveDetection(image,dir,name)
 
     
     def SaveDetection(self, image, dir,name):
@@ -134,9 +131,10 @@ class MainWindow (QMainWindow):
 
     def SetInfrac(self):
         now,yesterday=self.GetDays()
-        n,nn,tn = GetInfToday(now)
-        print(tn)
-        y,ny,ty = GetInfYesterday(yesterday)
+        if GetInfToday != None:
+            n,nn,tn = GetInfToday(now)
+        if GetInfYesterday != None:
+            y,ny,ty = GetInfYesterday(yesterday)
         if nn != None and nn != "":
             self.infrac_today.setText("{0} ({1:.1f}%)".format(n,((nn/tn)*100)))
         if ny != None and ny != "":

@@ -13,9 +13,11 @@ import time
 import cv2
 import os
 
+from datetime import datetime
+
 class Worker1(QThread):
-    ImageUpdate = pyqtSignal(QImage)
-    list_persons = pyqtSignal(int,int,int,int,np.ndarray)
+    ImageUpdate = pyqtSignal(QImage,int,int,int)
+    list_persons = pyqtSignal(int,int,np.ndarray,str)
     #============= detect functions ============================================================================
     def detect_and_predict_mask(self,frame, faceNet, maskNet):
         # grab the dimensions of the frame and then construct a blob
@@ -110,12 +112,21 @@ class Worker1(QThread):
         dt = 0
         faces_mask= 0
         faces_without_mask = 0
+        
+        dt_temp = 0
+        ni = 0
+        flag = 0
+        send = False
+
         self.ThreadActive = True
         # initialize the video stream
         print("[INFO] starting video stream...")
         #vs = VideoStream(src=0).start()
         vs = cv2.VideoCapture(0)
+        vs.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        vs.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
         while self.ThreadActive:
+            #print(vs.get(cv2.CAP_PROP_FPS))
             _,frame = vs.read()
             #frame = imutils.resize(frame, width=800)
 
@@ -149,12 +160,30 @@ class Worker1(QThread):
             Image = cv2.flip(Image,1)
             FlippedImage = cv2.flip(Image, 1)
             ConvertToQtFormat = QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
-            Pic = ConvertToQtFormat.scaled(860, 640, Qt.KeepAspectRatio)
-            self.ImageUpdate.emit(Pic)
+            Pic = ConvertToQtFormat.scaled(960, 640, Qt.KeepAspectRatio)
             faces_mask = len(preds) - faces_without_mask
-            self.list_persons.emit(len(preds),faces_without_mask,faces_mask, dt,FlippedImage)
+            self.ImageUpdate.emit(Pic,len(preds),faces_without_mask,faces_mask)
 
-            dt = faces_without_mask                
+            #add
+            if faces_without_mask > 0:
+                if faces_without_mask > ni:
+                    dt = len(preds)
+                    ni = faces_without_mask
+                    img_temp = FlippedImage
+                    send = True
+                    name = str(datetime.now())
+                flag = 0
+            else:
+                flag += 1
+
+            if flag == 30 and send:
+                self.list_persons.emit(dt,ni,img_temp,name)
+                dt = 0
+                ni = 0
+                flag = 0
+                send = False
+
+            #
             faces_without_mask = 0
             #time.sleep(0.5)
 
