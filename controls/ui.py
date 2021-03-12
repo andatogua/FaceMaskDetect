@@ -46,7 +46,7 @@ class MainWindow (QMainWindow):
         self.LoadThumbnail()
         self.SetInfrac()
 
-        self.actionReportes.triggered.connect(self.OpenReport)
+        self.actionReporte_Diario.triggered.connect(self.OpenReport)
         
 
     def start_stream(self):

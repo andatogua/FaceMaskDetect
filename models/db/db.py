@@ -81,3 +81,19 @@ def GetLastData(day):
             else:
                 return 0
     conn.close()
+
+def GetInfOneDay(day):
+    conn = CreateConn()
+    data = []
+    if conn.open():
+        q = QSqlQuery()
+        if q.prepare("SELECT sum(nomask), sum(total), strftime('%H',date) as hour FROM log WHERE date(date) = '" + day + "' GROUP BY strftime('%H',date);"):
+            if q.exec():
+                while q.next():
+                    data.append([q.value(0),q.value(1),q.value(2)]) 
+                return data
+            else:
+                return None,None,None
+        else:
+            return None,None,None
+    conn.close()

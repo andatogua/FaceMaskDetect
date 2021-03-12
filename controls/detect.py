@@ -23,13 +23,12 @@ class Worker1(QThread):
         # grab the dimensions of the frame and then construct a blob
         # from it
         (h, w) = frame.shape[:2]
-        blob = cv2.dnn.blobFromImage(frame, 1.0, (320, 320),
+        blob = cv2.dnn.blobFromImage(frame, 1.0, (512, 512),
             (104.0, 177.0, 123.0))
 
         # pass the blob through the network and obtain the face detections
         faceNet.setInput(blob)
         detections = faceNet.forward()
-        #print(detections.shape)
 
         # initialize our list of faces, their corresponding locations,
         # and the list of predictions from our face mask network
@@ -42,7 +41,6 @@ class Worker1(QThread):
             # extract the confidence (i.e., probability) associated with
             # the detection
             confidence = detections[0, 0, i, 2]
-
             # filter out weak detections by ensuring the confidence is
             # greater than the minimum confidence
             if confidence > 0.9:
@@ -75,7 +73,7 @@ class Worker1(QThread):
             # faces at the same time rather than one-by-one predictions
             # in the above `for` loop
             faces = np.array(faces, dtype="float32")
-            preds = maskNet.predict(faces, batch_size=32)
+            preds = maskNet.predict(faces, batch_size=8)
 
         # return a 2-tuple of the face locations and their corresponding
         # locations
@@ -123,8 +121,8 @@ class Worker1(QThread):
         print("[INFO] starting video stream...")
         #vs = VideoStream(src=0).start()
         vs = cv2.VideoCapture(0)
-        vs.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        vs.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        #vs.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        #vs.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
         while self.ThreadActive:
             #print(vs.get(cv2.CAP_PROP_FPS))
             _,frame = vs.read()
@@ -143,29 +141,32 @@ class Worker1(QThread):
 
                 # determine the class label and color we'll use to draw
                 # the bounding box and text
-                label = "Mask" if mask > withoutMask else "No Mask"
-                color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
-
-                # include the probability in the label
-                label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
-
-                # display the label and bounding box rectangle on the output
-                # frame
-                if withoutMask > mask:
+                if mask > 0.01:
+                    label = "Mask"
+                    color = (0, 255, 0)
+                if withoutMask > 0.9:
+                    label="No Mask"
+                    color = (0, 0, 255)
                     faces_without_mask += 1
-                    cv2.putText(frame, label, (startX, startY - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
-                    cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
+
+		
+		# display the label and bounding box rectangle on the output
+		# frame
+                cv2.putText(frame, label, (startX, startY - 10),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
+                cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
             Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             Image = cv2.flip(Image,1)
             FlippedImage = cv2.flip(Image, 1)
             ConvertToQtFormat = QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
-            Pic = ConvertToQtFormat.scaled(960, 640, Qt.KeepAspectRatio)
+            Pic = ConvertToQtFormat.scaled(1030, 660, Qt.KeepAspectRatio)
             faces_mask = len(preds) - faces_without_mask
             self.ImageUpdate.emit(Pic,len(preds),faces_without_mask,faces_mask)
 
             #add
             if faces_without_mask > 0:
+                if len(preds) > dt:
+                    dt = len(preds)
                 if faces_without_mask > ni:
                     dt = len(preds)
                     ni = faces_without_mask

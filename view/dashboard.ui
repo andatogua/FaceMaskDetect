@@ -480,8 +480,16 @@ QMenu::item:selected {
     <property name="title">
      <string>Menú</string>
     </property>
+    <widget class="QMenu" name="menuReportes_2_0">
+     <property name="title">
+      <string>Reportes</string>
+     </property>
+     <addaction name="actionReporte_Diario"/>
+     <addaction name="actionReporte_Semanal"/>
+     <addaction name="actionComparar_dos_dias"/>
+    </widget>
     <addaction name="actiona"/>
-    <addaction name="actionReportes"/>
+    <addaction name="menuReportes_2_0"/>
     <addaction name="separator"/>
     <addaction name="actionSalir"/>
    </widget>
@@ -501,6 +509,21 @@ QMenu::item:selected {
   <action name="actionSalir">
    <property name="text">
     <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionReporte_Diario">
+   <property name="text">
+    <string>Reporte Diario</string>
+   </property>
+  </action>
+  <action name="actionReporte_Semanal">
+   <property name="text">
+    <string>Reporte Semanal</string>
+   </property>
+  </action>
+  <action name="actionComparar_dos_dias">
+   <property name="text">
+    <string>Comparar dos dias</string>
    </property>
   </action>
  </widget>
