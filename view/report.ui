@@ -317,7 +317,7 @@ font-weight: bold;
    <property name="title">
     <string>Histórico</string>
    </property>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>9</x>
@@ -326,7 +326,14 @@ font-weight: bold;
       <height>641</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_5"/>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5"/>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_6"/>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

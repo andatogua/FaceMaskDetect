@@ -16,14 +16,14 @@ import os
 from datetime import datetime
 
 class Worker1(QThread):
-    ImageUpdate = pyqtSignal(QImage,int,int,int)
+    ImageUpdate = pyqtSignal(QImage,int,int,int,np.ndarray)
     list_persons = pyqtSignal(int,int,np.ndarray,str)
     #============= detect functions ============================================================================
     def detect_and_predict_mask(self,frame, faceNet, maskNet):
         # grab the dimensions of the frame and then construct a blob
         # from it
         (h, w) = frame.shape[:2]
-        blob = cv2.dnn.blobFromImage(frame, 1.0, (512, 512),
+        blob = cv2.dnn.blobFromImage(frame, 1.0, (416, 416),
             (104.0, 177.0, 123.0))
 
         # pass the blob through the network and obtain the face detections
@@ -120,9 +120,9 @@ class Worker1(QThread):
         # initialize the video stream
         print("[INFO] starting video stream...")
         #vs = VideoStream(src=0).start()
-        vs = cv2.VideoCapture(0)
-        #vs.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        #vs.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        vs = cv2.VideoCapture(1)
+        vs.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+        vs.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
         while self.ThreadActive:
             #print(vs.get(cv2.CAP_PROP_FPS))
             _,frame = vs.read()
@@ -159,9 +159,9 @@ class Worker1(QThread):
             Image = cv2.flip(Image,1)
             FlippedImage = cv2.flip(Image, 1)
             ConvertToQtFormat = QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
-            Pic = ConvertToQtFormat.scaled(1030, 660, Qt.KeepAspectRatio)
+            Pic = ConvertToQtFormat.scaled(1280, 720, Qt.KeepAspectRatio)
             faces_mask = len(preds) - faces_without_mask
-            self.ImageUpdate.emit(Pic,len(preds),faces_without_mask,faces_mask)
+            self.ImageUpdate.emit(Pic,len(preds),faces_without_mask,faces_mask,FlippedImage)
 
             #add
             if faces_without_mask > 0:

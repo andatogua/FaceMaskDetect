@@ -5,14 +5,20 @@ from PyQt5.QtCore import *
 import cv2
 import os
 import time
+import sys
+import numpy as np
 from datetime import datetime,date,timedelta
 
 from .detect import Worker1
 from models.db.db import SaveLog,GetInfToday,GetInfYesterday
 
 from .report import ReportWindow
+from .week_report import WeekReportWindow
+from .secondw import MainWindow as Second
 
 class MainWindow (QMainWindow):
+    img = np.ndarray
+    play = False
     def __init__(self):
         QMainWindow.__init__(self)
         self.path = os.getcwd()
@@ -20,6 +26,7 @@ class MainWindow (QMainWindow):
         uic.loadUi(path_ui,self)
 
         self.move(0,0)
+
 
         self.Worker1 = Worker1()
         self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
@@ -47,7 +54,10 @@ class MainWindow (QMainWindow):
         self.SetInfrac()
 
         self.actionReporte_Diario.triggered.connect(self.OpenReport)
+        self.actionReporte_Semanal.triggered.connect(self.OpenWeekReport)
         
+        self.actionSalir.triggered.connect(self.Exit)
+        self.actiona.triggered.connect(self.SecondW)
 
     def start_stream(self):
         self.Worker1.start()
@@ -57,13 +67,16 @@ class MainWindow (QMainWindow):
     def stop_stream(self):
         self.Worker1.stop()
         self.statusBar().showMessage('Presione Iniciar para comenzar con las detecciones')
+        self.play = False
 
 
-    def ImageUpdateSlot(self, Image, t,s,c):
+    def ImageUpdateSlot(self, Image, t,s,c,i):
         self.cam_label.setPixmap(QPixmap.fromImage(Image))
+        self.img = cv2.cvtColor(i,cv2.COLOR_BGR2RGB)
         self.detect_person.setText(str(t))
         self.no_mask_person.setText(str(s))
         self.mask_person.setText(str(c))
+        self.play = True
 
 
     def DetectUpdate(self,dt,ni,image,name):
@@ -144,3 +157,23 @@ class MainWindow (QMainWindow):
     def OpenReport(self):
         r = ReportWindow()
         r.exec_()
+
+    def OpenWeekReport(self):
+        r = WeekReportWindow()
+        r.exec_()
+
+    def Exit(self):
+        sys.exit(1)
+    
+    def SecondW(self):
+        
+        while self.play:
+            cv2.imshow("Yo me cuido",self.img)
+            key = cv2.waitKey(1) & 0xFF
+
+        # if the `q` key was pressed, break from the loop
+            if key == ord("q"):
+                break
+
+        # do a bit of cleanup
+        cv2.destroyAllWindows()
