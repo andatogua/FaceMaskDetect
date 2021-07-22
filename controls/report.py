@@ -66,7 +66,7 @@ class ReportWindow(QDialog):
             xt = np.arange(len(x2today))
             self.sbt.axes.bar(xt-0.15,x1today,0.3,label='Total')
             self.sbt.axes.bar(xt+0.15,xtoday,0.3,label='Infractores')
-            self.sbt.axes.set_ylabel('N° Personas')
+            self.sbt.axes.set_ylabel('N° Personas sin mascarilla')
             self.sbt.axes.set_xlabel('Hora del día')
             self.sbt.axes.set_xticks(xt)
             self.sbt.axes.set_xticklabels(x2today,size='xx-small')
@@ -74,7 +74,7 @@ class ReportWindow(QDialog):
             self.sbt.axes.legend()
 
             self.spt.axes.plot(x2today,xtoday)
-            self.spt.axes.set_ylabel('N° Personas')
+            self.spt.axes.set_ylabel('N° Personas sin mascarilla')
             self.spt.axes.set_xlabel('Hora del día')
             self.spt.axes.set_xticks(xt)
             self.spt.axes.set_xticklabels(x2today,size='xx-small')

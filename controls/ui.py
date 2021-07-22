@@ -15,6 +15,8 @@ from models.db.db import SaveLog,GetInfToday,GetInfYesterday
 from .report import ReportWindow
 from .week_report import WeekReportWindow
 from .secondw import MainWindow as Second
+from .daysreport import DaysReportWindow
+from .messagebox import TimerMessageBox
 
 class MainWindow (QMainWindow):
     img = np.ndarray
@@ -55,6 +57,7 @@ class MainWindow (QMainWindow):
 
         self.actionReporte_Diario.triggered.connect(self.OpenReport)
         self.actionReporte_Semanal.triggered.connect(self.OpenWeekReport)
+        self.actionComparar_dos_dias.triggered.connect(self.OpenDaysReport)
         
         self.actionSalir.triggered.connect(self.Exit)
         self.actiona.triggered.connect(self.SecondW)
@@ -77,6 +80,9 @@ class MainWindow (QMainWindow):
         self.no_mask_person.setText(str(s))
         self.mask_person.setText(str(c))
         self.play = True
+
+        if s >= 5:
+            self.ShowMessage
 
 
     def DetectUpdate(self,dt,ni,image,name):
@@ -149,11 +155,15 @@ class MainWindow (QMainWindow):
         if GetInfYesterday != None:
             y,ny,ty = GetInfYesterday(yesterday)
         if nn != None and nn != "":
-            self.infrac_today.setText("{0} ({1:.1f}%)".format(n,((nn/tn)*100)))
+            self.infrac_today.setText("{0} ({1:.1f}%)".format(nn,((nn/tn)*100)))
         if ny != None and ny != "":
-            self.infrac_yesterday.setText("{0} ({1:.1f}%)".format(y,((ny/ty)*100)))
+            self.infrac_yesterday.setText("{0} ({1:.1f}%)".format(ny,((ny/ty)*100)))
 
        
+    def ShowMessage(self):
+        m = TimerMessageBox(3,self)
+        m.exec_()
+
     def OpenReport(self):
         r = ReportWindow()
         r.exec_()
@@ -162,13 +172,14 @@ class MainWindow (QMainWindow):
         r = WeekReportWindow()
         r.exec_()
 
-    def Exit(self):
-        sys.exit(1)
-    
+    def OpenDaysReport(self):
+        r = DaysReportWindow()
+        r.exec_()
+
     def SecondW(self):
-        
+        img = cv2.resize(self.img,(1360,710))
         while self.play:
-            cv2.imshow("Yo me cuido",self.img)
+            cv2.imshow("Yo me cuido",img)
             key = cv2.waitKey(1) & 0xFF
 
         # if the `q` key was pressed, break from the loop
@@ -177,3 +188,6 @@ class MainWindow (QMainWindow):
 
         # do a bit of cleanup
         cv2.destroyAllWindows()
+
+    def Exit(self):
+        sys.exit(1)

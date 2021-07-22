@@ -63,7 +63,7 @@ class WeekReportWindow(QDialog):
             
             xt = np.arange(len(x))
             self.spt.axes.plot(x,xtoday,label="Día 1: {}".format(now))
-            self.spt.axes.set_ylabel('N° Personas')
+            self.spt.axes.set_ylabel('N° Personas sin mascarilla')
             self.spt.axes.set_xlabel('Hora del día')
             self.spt.axes.set_xticklabels(x,size='xx-small')
             

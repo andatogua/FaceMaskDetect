@@ -452,7 +452,10 @@ color: #00a2f5;
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>Clic en &quot;Iniciar&quot; para empezar con las detecciones</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
