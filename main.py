@@ -1,3 +1,4 @@
+#!/home/dev/miniconda3/envs/envGPU python
 from PyQt5.QtWidgets import QApplication
 from controls.ui import MainWindow
 from models.db.db import PrepareDatabase

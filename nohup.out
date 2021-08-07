@@ -1,0 +1,367 @@
+2021-08-06 18:58:13.887087: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 18:58:13.917506: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.917769: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 18:58:13.917960: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:58:13.919430: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 18:58:13.921050: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 18:58:13.921385: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 18:58:13.922768: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 18:58:13.923708: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 18:58:13.927810: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 18:58:13.928032: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.929503: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.930108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 18:58:13.930671: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 18:58:13.940252: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 18:58:13.940504: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x558e32c4b460 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 18:58:13.940528: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 18:58:13.940905: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.941170: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 18:58:13.941249: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:58:13.941275: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 18:58:13.941293: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 18:58:13.941311: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 18:58:13.941327: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 18:58:13.941345: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 18:58:13.941375: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 18:58:13.941457: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.942291: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.942463: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 18:58:13.942530: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:58:13.979688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 18:58:13.979724: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 18:58:13.979731: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 18:58:13.979908: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.980253: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.980523: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:13.980721: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 390 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 18:58:13.982347: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x558e33c660c0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 18:58:13.982384: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+2021-08-06 18:58:57.863790: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 18:58:57.885029: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.885305: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 18:58:57.885527: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:58:57.887289: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 18:58:57.888865: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 18:58:57.889316: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 18:58:57.891238: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 18:58:57.892416: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 18:58:57.896500: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 18:58:57.896704: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.897068: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.897311: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 18:58:57.897649: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 18:58:57.903828: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 18:58:57.904069: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a162729460 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 18:58:57.904099: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 18:58:57.904304: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.904570: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 18:58:57.904660: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:58:57.904795: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 18:58:57.904822: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 18:58:57.904843: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 18:58:57.904864: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 18:58:57.904884: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 18:58:57.904904: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 18:58:57.905004: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.905316: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.905510: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 18:58:57.905578: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:58:57.947256: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 18:58:57.947311: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 18:58:57.947327: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 18:58:57.947562: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.947958: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.948256: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:58:57.948496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 139 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 18:58:57.950830: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55a16409e9d0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 18:58:57.950874: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+2021-08-06 18:58:57.953046: I tensorflow/stream_executor/cuda/cuda_driver.cc:763] failed to allocate 139.44M (146210816 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2021-08-06 18:58:58.005307: F ./tensorflow/core/kernels/random_op_gpu.h:232] Non-OK-status: GpuLaunchKernel(FillPhiloxRandomKernelLaunch<Distribution>, num_blocks, block_size, 0, d.stream(), gen, data, size, dist) status: Internal: out of memory
+2021-08-06 18:59:35.930391: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 18:59:35.957496: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:35.958196: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 18:59:35.958573: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:59:35.960097: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 18:59:35.961576: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 18:59:35.962021: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 18:59:35.963561: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 18:59:35.964508: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 18:59:35.968193: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 18:59:35.968389: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:35.968760: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:35.968968: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 18:59:35.969285: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 18:59:35.975759: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 18:59:35.975997: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x564b2b8ff460 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 18:59:35.976023: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 18:59:35.976237: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:35.976537: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 18:59:35.976614: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:59:35.976650: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 18:59:35.976668: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 18:59:35.976685: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 18:59:35.976703: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 18:59:35.976716: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 18:59:35.976740: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 18:59:35.976923: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:35.977249: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:35.977442: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 18:59:35.977508: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 18:59:36.008781: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 18:59:36.008835: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 18:59:36.008844: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 18:59:36.009035: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:36.009380: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:36.009700: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 18:59:36.009889: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 139 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 18:59:36.011955: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x564b2c919f80 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 18:59:36.012018: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+2021-08-06 18:59:36.014170: I tensorflow/stream_executor/cuda/cuda_driver.cc:763] failed to allocate 139.69M (146472960 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2021-08-06 18:59:36.069861: F ./tensorflow/core/kernels/random_op_gpu.h:232] Non-OK-status: GpuLaunchKernel(FillPhiloxRandomKernelLaunch<Distribution>, num_blocks, block_size, 0, d.stream(), gen, data, size, dist) status: Internal: out of memory
+2021-08-06 19:02:41.428109: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 19:02:41.455301: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.455542: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 19:02:41.455811: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:02:41.457304: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 19:02:41.458891: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 19:02:41.459373: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 19:02:41.461087: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 19:02:41.462407: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 19:02:41.466469: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 19:02:41.466738: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.467197: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.467449: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 19:02:41.467850: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 19:02:41.474219: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 19:02:41.474462: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55fa15995460 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 19:02:41.474493: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 19:02:41.474763: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.475053: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 19:02:41.475178: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:02:41.475210: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 19:02:41.475241: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 19:02:41.475262: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 19:02:41.475282: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 19:02:41.475301: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 19:02:41.475320: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 19:02:41.475408: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.475771: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.475937: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 19:02:41.475987: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:02:41.503137: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 19:02:41.503171: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 19:02:41.503178: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 19:02:41.503346: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.503702: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.503934: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:02:41.504221: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 410 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 19:02:41.506053: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55fa1730ac60 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 19:02:41.506085: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+2021-08-06 19:03:34.246127: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 19:03:34.275139: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.275373: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 19:03:34.275583: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:03:34.276960: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 19:03:34.278252: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 19:03:34.278595: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 19:03:34.279888: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 19:03:34.280832: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 19:03:34.284063: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 19:03:34.284251: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.284550: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.284737: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 19:03:34.285007: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 19:03:34.290348: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 19:03:34.290604: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55789497f460 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 19:03:34.290630: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 19:03:34.290819: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.291070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 19:03:34.291135: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:03:34.291150: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 19:03:34.291161: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 19:03:34.291172: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 19:03:34.291183: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 19:03:34.291194: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 19:03:34.291204: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 19:03:34.291275: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.291510: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.291703: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 19:03:34.291766: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:03:34.318185: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 19:03:34.318222: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 19:03:34.318229: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 19:03:34.318458: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.318764: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.319070: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:03:34.319289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 410 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 19:03:34.321289: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x557896378c30 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 19:03:34.321327: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+/bin/bash: python: orden no encontrada
+2021-08-06 19:11:25.865761: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 19:11:25.895347: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.895667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 19:11:25.895950: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:11:25.897880: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 19:11:25.899674: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 19:11:25.900255: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 19:11:25.902836: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 19:11:25.903889: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 19:11:25.909464: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 19:11:25.909716: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.910178: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.910479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 19:11:25.910837: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 19:11:25.917797: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 19:11:25.918417: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x563b47806460 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 19:11:25.918457: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 19:11:25.918689: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.919361: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 19:11:25.919472: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:11:25.919523: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 19:11:25.919547: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 19:11:25.919569: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 19:11:25.919590: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 19:11:25.919611: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 19:11:25.919632: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 19:11:25.919743: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.920105: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.920374: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 19:11:25.920450: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 19:11:25.959831: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 19:11:25.959867: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 19:11:25.959874: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 19:11:25.960084: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.960383: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.960673: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 19:11:25.960863: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 414 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 19:11:25.962647: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x563b4917bc80 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 19:11:25.962700: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+/bin/bash: python: orden no encontrada
+/bin/bash: python: orden no encontrada
+2021-08-06 20:47:19.978009: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 20:47:20.046393: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:20.046732: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 20:47:20.074747: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 20:47:20.314270: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 20:47:20.493840: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 20:47:20.564603: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 20:47:20.832372: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 20:47:20.879425: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 20:47:21.323954: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 20:47:21.324239: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.324870: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.325281: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 20:47:21.325755: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 20:47:21.469811: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 20:47:21.478847: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560b5d0f5790 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 20:47:21.478916: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 20:47:21.484270: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.484751: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 20:47:21.484859: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 20:47:21.484922: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 20:47:21.484982: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 20:47:21.485050: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 20:47:21.485094: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 20:47:21.485126: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 20:47:21.485152: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 20:47:21.485272: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.485802: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.486191: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 20:47:21.498740: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 20:47:21.637092: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 20:47:21.637215: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 20:47:21.637403: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 20:47:21.638139: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.639873: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.641502: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:21.642969: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 401 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 20:47:21.686156: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560b5ea645a0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 20:47:21.686236: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+2021-08-06 20:47:59.141488: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-08-06 20:47:59.170313: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.170535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 20:47:59.170747: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 20:47:59.172088: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 20:47:59.173366: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 20:47:59.173727: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 20:47:59.175043: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 20:47:59.175932: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 20:47:59.179140: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 20:47:59.179311: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.179646: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.179812: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 20:47:59.180073: I tensorflow/core/platform/cpu_feature_guard.cc:143] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-08-06 20:47:59.185224: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3699850000 Hz
+2021-08-06 20:47:59.185481: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55f2fd178790 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-08-06 20:47:59.185509: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-08-06 20:47:59.185732: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.185948: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1561] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GT 710 computeCapability: 3.5
+coreClock: 0.954GHz coreCount: 1 deviceMemorySize: 980.94MiB deviceMemoryBandwidth: 13.41GiB/s
+2021-08-06 20:47:59.186035: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 20:47:59.186064: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-08-06 20:47:59.186077: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-08-06 20:47:59.186089: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-08-06 20:47:59.186099: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-08-06 20:47:59.186110: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-08-06 20:47:59.186122: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-08-06 20:47:59.186193: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.186414: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.186581: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1703] Adding visible gpu devices: 0
+2021-08-06 20:47:59.186625: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.1
+2021-08-06 20:47:59.214973: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-08-06 20:47:59.215008: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1108]      0 
+2021-08-06 20:47:59.215015: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1121] 0:   N 
+2021-08-06 20:47:59.215190: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.215556: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.215797: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-08-06 20:47:59.216055: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1247] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 416 MB memory) -> physical GPU (device: 0, name: GeForce GT 710, pci bus id: 0000:01:00.0, compute capability: 3.5)
+2021-08-06 20:47:59.218017: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55f2feae7760 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-08-06 20:47:59.218067: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GT 710, Compute Capability 3.5
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed.
+/home/dev/FaceMaskDetect/controls/report.py:96: MatplotlibDeprecationWarning: normalize=None does not normalize if the sum is less than 1 but this behavior is deprecated since 3.3 until two minor releases later. After the deprecation period the default value will be normalize=True. To prevent normalization pass normalize=False 
+  self.sc.axes.pie(fracs, explode=explode, labels=labels,  shadow=True, startangle=90, autopct='%1.1f%%')

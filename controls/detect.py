@@ -18,12 +18,13 @@ from datetime import datetime
 class Worker1(QThread):
     ImageUpdate = pyqtSignal(QImage,int,int,int,np.ndarray)
     list_persons = pyqtSignal(int,int,np.ndarray,str)
+    error = pyqtSignal()
     #============= detect functions ============================================================================
     def detect_and_predict_mask(self,frame, faceNet, maskNet):
         # grab the dimensions of the frame and then construct a blob
         # from it
         (h, w) = frame.shape[:2]
-        blob = cv2.dnn.blobFromImage(frame, 1.1, (416, 416),
+        blob = cv2.dnn.blobFromImage(frame, 1.1, (224, 224),
             (104.0, 177.0, 123.0))
 
         # pass the blob through the network and obtain the face detections
@@ -123,69 +124,77 @@ class Worker1(QThread):
         vs = cv2.VideoCapture(0)
         vs.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
         vs.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        if not vs.isOpened():
+            print("error")
+            self.error.emit()
         while self.ThreadActive:
             #print(vs.get(cv2.CAP_PROP_FPS))
-            _,frame = vs.read()
-            #frame = imutils.resize(frame, width=800)
-            # detect faces in the frame and determine if they are wearing a
-            # face mask or not
-            (locs, preds) = self.detect_and_predict_mask(frame, self.faceNet, self.maskNet)
+            success,frame = vs.read()
+            if success:
+                #frame = imutils.resize(frame, width=800)
+                # detect faces in the frame and determine if they are wearing a
+                # face mask or not
+                (locs, preds) = self.detect_and_predict_mask(frame, self.faceNet, self.maskNet)
 
-            # loop over the detected face locations and their corresponding
-            # locations
-            for (box, pred) in zip(locs, preds):
-                # unpack the bounding box and predictions
-                (startX, startY, endX, endY) = box
-                (mask, withoutMask) = pred
+                # loop over the detected face locations and their corresponding
+                # locations
+                for (box, pred) in zip(locs, preds):
+                    # unpack the bounding box and predictions
+                    (startX, startY, endX, endY) = box
+                    (mask, withoutMask) = pred
 
-                # determine the class label and color we'll use to draw
-                # the bounding box and text
-                if mask > 0.01:
-                    label = "Mask"
-                    color = (0, 255, 0)
-                if withoutMask > 0.9:
-                    label="No Mask"
-                    color = (0, 0, 255)
-                    faces_without_mask += 1
+                    # determine the class label and color we'll use to draw
+                    # the bounding box and text
+                    if mask > 0.01:
+                        label = "Mask"
+                        color = (0, 255, 0)
+                    if withoutMask > 0.9:
+                        label="No Mask"
+                        color = (0, 0, 255)
+                        faces_without_mask += 1
 
-		
-		# display the label and bounding box rectangle on the output
-		# frame
-                cv2.putText(frame, label, (startX, startY - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
-                cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
-            Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            Image = cv2.flip(Image,1)
-            FlippedImage = cv2.flip(Image, 1)
-            ConvertToQtFormat = QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
-            Pic = ConvertToQtFormat.scaled(1030, 660, Qt.KeepAspectRatio)
-            faces_mask = len(preds) - faces_without_mask
-            self.ImageUpdate.emit(Pic,len(preds),faces_without_mask,faces_mask,FlippedImage)
+            
+                # display the label and bounding box rectangle on the output
+                # frame
+                    cv2.putText(frame, label, (startX, startY - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
+                    cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
+                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                Image = cv2.flip(Image,1)
+                FlippedImage = cv2.flip(Image, 1)
+                ConvertToQtFormat = QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
+                Pic = ConvertToQtFormat.scaled(1030, 660, Qt.KeepAspectRatio)
+                faces_mask = len(preds) - faces_without_mask
+                self.ImageUpdate.emit(Pic,len(preds),faces_without_mask,faces_mask,FlippedImage)
 
-            #add
-            if faces_without_mask > 0:
-                if len(preds) > dt:
-                    dt = len(preds)
-                if faces_without_mask > ni:
-                    dt = len(preds)
-                    ni = faces_without_mask
-                    img_temp = FlippedImage
-                    send = True
-                    name = str(datetime.now())
-                flag = 0
+                #add
+                if faces_without_mask > 0:
+                    if len(preds) > dt:
+                        dt = len(preds)
+                    if faces_without_mask > ni:
+                        dt = len(preds)
+                        ni = faces_without_mask
+                        img_temp = FlippedImage
+                        send = True
+                        name = str(datetime.now())
+                    flag = 0
+                else:
+                    flag += 1
+
+                if flag == 30 and send:
+                    self.list_persons.emit(dt,ni,img_temp,name)
+                    dt = 0
+                    ni = 0
+                    flag = 0
+                    send = False
+
+                #
+                faces_without_mask = 0
+                #time.sleep(0.5)
             else:
-                flag += 1
-
-            if flag == 30 and send:
-                self.list_persons.emit(dt,ni,img_temp,name)
-                dt = 0
-                ni = 0
-                flag = 0
-                send = False
-
-            #
-            faces_without_mask = 0
-            #time.sleep(0.5)
+                self.error.emit()
+                self.stop
+        
 
     
 

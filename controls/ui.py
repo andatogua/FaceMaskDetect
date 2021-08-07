@@ -33,6 +33,7 @@ class MainWindow (QMainWindow):
         self.Worker1 = Worker1()
         self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
         self.Worker1.list_persons.connect(self.DetectUpdate)
+        self.Worker1.error.connect(self.showerror)
         self.start_cam.clicked.connect(self.start_stream)
         self.stop_cam.clicked.connect(self.stop_stream)
 
@@ -61,16 +62,23 @@ class MainWindow (QMainWindow):
         
         self.actionSalir.triggered.connect(self.Exit)
         self.actiona.triggered.connect(self.SecondW)
+        self.actiona.setEnabled(False)
 
     def start_stream(self):
         self.Worker1.start()
         self.statusBar().showMessage("Video iniciado")
+        self.actiona.setEnabled(True)
 
 
     def stop_stream(self):
         self.Worker1.stop()
-        self.statusBar().showMessage('Presione Iniciar para comenzar con las detecciones')
         self.play = False
+        self.statusBar().showMessage('Presione Iniciar para comenzar con las detecciones')
+        self.actiona.setEnabled(False)
+
+    def showerror(self):
+        self.cam_label.setText("Cámara desconectada")
+        self.stop_stream()
 
 
     def ImageUpdateSlot(self, Image, t,s,c,i):
@@ -177,9 +185,9 @@ class MainWindow (QMainWindow):
         r.exec_()
 
     def SecondW(self):
-        img = cv2.resize(self.img,(1360,710))
         while self.play:
-            cv2.imshow("Yo me cuido",img)
+            img = cv2.resize(self.img,(1360,710))   
+            cv2.imshow('Yo me cuido | Presione "q" para cerrar la ventana',img)
             key = cv2.waitKey(1) & 0xFF
 
         # if the `q` key was pressed, break from the loop
