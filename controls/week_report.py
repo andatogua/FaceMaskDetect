@@ -10,6 +10,7 @@ import numpy as np
 from models.db.db import GetInfToday, GetTotals, GetLastData, GetInfOneDay,GetInfYesterday
 from .canvas import MplCanvas
 
+import csv
 
 class WeekReportWindow(QDialog):
     def __init__(self):
@@ -26,6 +27,8 @@ class WeekReportWindow(QDialog):
 
         self.spt= MplCanvas(self, width=5, height=1, dpi=100)
         self.gridLayout.addWidget(self.spt)
+
+        self.download_button1.clicked.connect(self.downloaddata)
 
         self.DateChange()
 
@@ -113,3 +116,37 @@ class WeekReportWindow(QDialog):
         self.spt.axes.legend()
         self.spt.draw()
 
+    def downloaddata(self):
+        now = self.dateEdit.date().toString('yyyy-MM-dd')
+        day = date.fromisoformat(now)
+        dayminusone = day + timedelta(-1)
+        dayminustwo = day + timedelta(-2)
+        dayminusthree = day + timedelta(-3)
+        dayminusfour = day + timedelta(-4)
+
+        data1 = GetDayDataDownload(str(dayminusfour))
+        data2 = GetDayDataDownload(str(dayminusthree))
+        data3 = GetDayDataDownload(str(dayminustwo))
+        data4 = GetDayDataDownload(str(dayminusone))
+        data5 = GetDayDataDownload(now)
+
+        
+        path = os.getcwd() + "/export"
+        if not os.path.exists(path):
+            os.mkdir(path)
+        filename = path + "/data-{}-to-{}.csv".format(day1,day5)
+
+        with open(filename,"w") as file:
+            writer = csv.writer(file,delimiter="\t")
+            writer.writerow(['id','nomask','total','date'])
+            for a in data1:
+                writer.writerow(a)
+            for b in data2:
+                writer.writerow(b)
+            for c in data3:
+                writer.writerow(c)
+            for d in data4:
+                writer.writerow(d)
+            for e in data5:
+                writer.writerow(e)
+            self.download_lbl.setText("Exportado: {}".format(filename))

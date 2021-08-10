@@ -37,7 +37,7 @@
      <x>10</x>
      <y>0</y>
      <width>1341</width>
-     <height>701</height>
+     <height>681</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -68,7 +68,7 @@ font-weight: bold;
       <x>10</x>
       <y>60</y>
       <width>1321</width>
-      <height>631</height>
+      <height>611</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout"/>
@@ -318,6 +318,45 @@ border-left-color: #00a2f5;</string>
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="download_button1">
+    <property name="geometry">
+     <rect>
+      <x>1290</x>
+      <y>10</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>source/img/Download-256.png</normaloff>source/img/Download-256.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="download_lbl">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>690</y>
+     <width>991</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>

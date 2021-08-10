@@ -34,7 +34,7 @@
      <x>9</x>
      <y>10</y>
      <width>351</width>
-     <height>150</height>
+     <height>131</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -99,7 +99,7 @@ font-weight: bold;
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>110</y>
+      <y>90</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -112,13 +112,39 @@ font-weight: bold;
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>110</y>
+      <y>90</y>
       <width>81</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Infractores</string>
+     <string>Infractores:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="download_button1">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>30</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>source/img/Download-256.png</normaloff>source/img/Download-256.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
     </property>
    </widget>
   </widget>
@@ -126,7 +152,7 @@ font-weight: bold;
    <property name="geometry">
     <rect>
      <x>9</x>
-     <y>170</y>
+     <y>150</y>
      <width>351</width>
      <height>150</height>
     </rect>
@@ -247,7 +273,7 @@ font-weight: bold;
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>340</y>
+     <y>320</y>
      <width>351</width>
      <height>341</height>
     </rect>
@@ -292,7 +318,7 @@ font-weight: bold;
      <x>380</x>
      <y>10</y>
      <width>961</width>
-     <height>671</height>
+     <height>651</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -317,13 +343,13 @@ font-weight: bold;
    <property name="title">
     <string>Histórico</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>9</x>
       <y>19</y>
       <width>941</width>
-      <height>641</height>
+      <height>621</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -335,6 +361,19 @@ font-weight: bold;
      </item>
     </layout>
    </widget>
+  </widget>
+  <widget class="QLabel" name="download_lbl">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>670</y>
+     <width>991</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -6,8 +6,9 @@ import os
 from datetime import datetime,date,timedelta
 
 import numpy as np
+import csv
 
-from models.db.db import GetInfToday, GetTotals, GetLastData, GetInfOneDay
+from models.db.db import GetInfToday, GetTotals, GetLastData, GetInfOneDay, GetDayDataDownload
 from .canvas import MplCanvas
 
 class ReportWindow(QDialog):
@@ -20,6 +21,8 @@ class ReportWindow(QDialog):
         self.dateEdit.setMaximumDate(datetime.now())
         self.dateEdit.setDate(datetime.now())
         self.dateEdit.dateChanged.connect(self.DateChange)
+
+        self.download_button1.clicked.connect(self.downloaddata)
 
         self.sbt = MplCanvas(self, width=5, height=1, dpi=100)
         self.spt = MplCanvas(self, width=5, height=1, dpi=100)
@@ -34,6 +37,7 @@ class ReportWindow(QDialog):
 
     def DateChange(self):
         now = self.dateEdit.date().toString('yyyy-MM-dd')
+        self.download_lbl.setText("")
         self.LoadData(now)
 
     def LoadData(self,now):
@@ -97,4 +101,17 @@ class ReportWindow(QDialog):
         self.sc.draw()
         
 
-        
+    def downloaddata(self):
+        now = self.dateEdit.date().toString('yyyy-MM-dd')
+        data = GetDayDataDownload(now)
+        path = os.getcwd() + "/export"
+        if not os.path.exists(path):
+            os.mkdir(path)
+        filename = path + "/data-{}.csv".format(now)
+
+        with open(filename,"w") as file:
+            writer = csv.writer(file,delimiter="\t")
+            writer.writerow(['id','nomask','total','date'])
+            for r in data:
+                writer.writerow(r)
+            self.download_lbl.setText("Exportado: {}".format(filename))

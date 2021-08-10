@@ -7,9 +7,10 @@ from datetime import datetime,date,timedelta
 
 import numpy as np
 
-from models.db.db import GetInfToday, GetTotals, GetLastData, GetInfOneDay,GetInfYesterday
+from models.db.db import GetInfToday, GetTotals, GetLastData, GetInfOneDay,GetInfYesterday, GetDayDataDownload
 from .canvas import MplCanvas
 
+import csv
 
 class DaysReportWindow(QDialog):
     def __init__(self):
@@ -27,6 +28,8 @@ class DaysReportWindow(QDialog):
         self.dateEdit_2.setMaximumDate(datetime.now())
         self.dateEdit_2.setDate(datetime.now() + timedelta(-1))
         self.dateEdit_2.dateChanged.connect(self.DateChange)
+
+        self.download_button1.clicked.connect(self.downloaddata)
 
         self.spt= MplCanvas(self, width=5, height=1, dpi=100)
         self.gridLayout.addWidget(self.spt)
@@ -79,3 +82,22 @@ class DaysReportWindow(QDialog):
         self.spt.axes.legend()
         self.spt.draw()
 
+
+    def downloaddata(self):
+        day1 = self.dateEdit.date().toString('yyyy-MM-dd')
+        day2 = self.dateEdit_2.date().toString('yyyy-MM-dd')
+        data1 = GetDayDataDownload(day1)
+        data2 = GetDayDataDownload(day2)
+        path = os.getcwd() + "/export"
+        if not os.path.exists(path):
+            os.mkdir(path)
+        filename = path + "/data-{}-vs-{}.csv".format(day1,day2)
+
+        with open(filename,"w") as file:
+            writer = csv.writer(file,delimiter="\t")
+            writer.writerow(['id','nomask','total','date'])
+            for p in data1:
+                writer.writerow(p)
+            for r in data2:
+                writer.writerow(r)
+            self.download_lbl.setText("Exportado: {}".format(filename))

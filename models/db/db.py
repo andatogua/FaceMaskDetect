@@ -97,3 +97,19 @@ def GetInfOneDay(day):
         else:
             return None,None,None
     conn.close()
+
+def GetDayDataDownload(day):
+    conn = CreateConn()
+    data = []
+    if conn.open():
+        q = QSqlQuery()
+        if q.prepare("SELECT * FROM log WHERE date(date) = '" + day + "';"):
+            if q.exec():
+                while q.next():
+                    data.append([q.value(0),q.value(1),q.value(2),q.value(3)]) 
+                return data
+            else:
+                return None,None,None
+        else:
+            return None,None,None
+    conn.close()
