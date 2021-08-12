@@ -114,7 +114,10 @@ class MainWindow (QMainWindow):
 
 
     def LoadThumbnail(self):
-        dir = os.path.join(self.path,'saved/')
+        folder = 'saved'
+        dir = os.path.join(self.path,folder)
+        if not os.path.exists(dir):
+            os.mkdir(dir)
         files = [ f for f in os.listdir(dir)]
         files = sorted(files)
         col = 0
