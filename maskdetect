@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /home/dev/FaceMaskDetect/
+cd /ruta/copiada/desde/consola/
 nohup /bin/bash -c "python main.py" &
 sleep 3
 echo -e "\e[5;30;1;103mYa puede cerrar la consola\e[0m"
