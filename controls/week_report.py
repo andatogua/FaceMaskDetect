@@ -134,7 +134,7 @@ class WeekReportWindow(QDialog):
         path = os.getcwd() + "/export"
         if not os.path.exists(path):
             os.mkdir(path)
-        filename = path + "/data-{}-to-{}.csv".format(day1,day5)
+        filename = path + "/data-{}-to-{}.csv".format(str(dayminusfour),now)
 
         with open(filename,"w") as file:
             writer = csv.writer(file,delimiter="\t")
