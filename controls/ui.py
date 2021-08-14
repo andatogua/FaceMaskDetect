@@ -89,9 +89,6 @@ class MainWindow (QMainWindow):
         self.mask_person.setText(str(c))
         self.play = True
 
-        if s >= 5:
-            self.ShowMessage
-
 
     def DetectUpdate(self,dt,ni,image,name):
         name = str(datetime.now())

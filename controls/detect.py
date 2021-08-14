@@ -24,7 +24,7 @@ class Worker1(QThread):
         # grab the dimensions of the frame and then construct a blob
         # from it
         (h, w) = frame.shape[:2]
-        blob = cv2.dnn.blobFromImage(frame, 1.1, (224, 224),
+        blob = cv2.dnn.blobFromImage(frame, 1.1, (416, 416),
             (104.0, 177.0, 123.0))
 
         # pass the blob through the network and obtain the face detections
@@ -145,20 +145,24 @@ class Worker1(QThread):
 
                     # determine the class label and color we'll use to draw
                     # the bounding box and text
-                    if mask > 0.01:
-                        label = "Mask"
-                        color = (0, 255, 0)
+                    #if mask > 0.01:
+                    #    label = "Mask"
+                    #    color = (0, 255, 0)
                     if withoutMask > 0.9:
                         label="No Mask"
                         color = (0, 0, 255)
                         faces_without_mask += 1
 
             
-                # display the label and bounding box rectangle on the output
-                # frame
-                    cv2.putText(frame, label, (startX, startY - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
-                    cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
+		            # display the label and bounding box rectangle on the output
+		            # frame
+                        cv2.putText(frame, label, (startX, startY - 10),cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
+                        cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
+                
+                if faces_without_mask > 3:
+                    cv2.rectangle(frame,(0,0),(1280,720),(0,0,255),10)
+                    cv2.putText(frame, "Excedido el número de personas sin mascarilla", (20, 700),cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0,0,255), 1)
+
                 Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 Image = cv2.flip(Image,1)
                 FlippedImage = cv2.flip(Image, 1)
@@ -166,6 +170,8 @@ class Worker1(QThread):
                 Pic = ConvertToQtFormat.scaled(1030, 660, Qt.KeepAspectRatio)
                 faces_mask = len(preds) - faces_without_mask
                 self.ImageUpdate.emit(Pic,len(preds),faces_without_mask,faces_mask,FlippedImage)
+
+                
 
                 #add
                 if faces_without_mask > 0:
