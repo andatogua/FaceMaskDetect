@@ -24,8 +24,7 @@ class Worker1(QThread):
         # grab the dimensions of the frame and then construct a blob
         # from it
         (h, w) = frame.shape[:2]
-        blob = cv2.dnn.blobFromImage(frame, 1.1, (416, 416),
-            (104.0, 177.0, 123.0))
+        blob = cv2.dnn.blobFromImage(cv2.resize(frame, (720, 720)), 1.0, (512, 512), (104.0, 177.0, 123.0))
 
         # pass the blob through the network and obtain the face detections
         faceNet.setInput(blob)
@@ -49,11 +48,16 @@ class Worker1(QThread):
                 # the object
                 box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
                 (startX, startY, endX, endY) = box.astype("int")
-
+		
                 # ensure the bounding boxes fall within the dimensions of
                 # the frame
                 (startX, startY) = (max(0, startX), max(0, startY))
                 (endX, endY) = (min(w - 1, endX), min(h - 1, endY))
+				if startX > w or startX == endX:
+					startX = w - 50
+				if startY > h:
+					startY = h - 50
+		
 
                 # extract the face ROI, convert it from BGR to RGB channel
                 # ordering, resize it to 224x224, and preprocess it
@@ -74,7 +78,7 @@ class Worker1(QThread):
             # faces at the same time rather than one-by-one predictions
             # in the above `for` loop
             faces = np.array(faces, dtype="float32")
-            preds = maskNet.predict(faces, batch_size=8)
+            preds = maskNet.predict(faces, batch_size=2)
 
         # return a 2-tuple of the face locations and their corresponding
         # locations
@@ -96,21 +100,12 @@ class Worker1(QThread):
     #============= main functions ============================================================================
 
     def run(self):
-        """
-        self.ThreadActive = True
-        Capture = cv2.VideoCapture(0)
-        while self.ThreadActive:
-            ret, frame = Capture.read()
-            if ret:
-                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                FlippedImage = cv2.flip(Image, 1)
-                ConvertToQtFormat = QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
-                Pic = ConvertToQtFormat.scaled(640, 480, Qt.KeepAspectRatio)
-                self.ImageUpdate.emit(Pic)
-        """
+
         dt = 0
         faces_mask= 0
         faces_without_mask = 0
+		color=(0,0,0)
+		label=""
         
         dt_temp = 0
         ni = 0
@@ -148,7 +143,7 @@ class Worker1(QThread):
                     #if mask > 0.01:
                     #    label = "Mask"
                     #    color = (0, 255, 0)
-                    if withoutMask > 0.9:
+                    if withoutMask > 0.9 and mask < 0.01:
                         label="No Mask"
                         color = (0, 0, 255)
                         faces_without_mask += 1
@@ -196,7 +191,7 @@ class Worker1(QThread):
 
                 #
                 faces_without_mask = 0
-                #time.sleep(0.5)
+                
             else:
                 self.error.emit()
                 self.stop
