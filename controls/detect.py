@@ -53,10 +53,10 @@ class Worker1(QThread):
                 # the frame
                 (startX, startY) = (max(0, startX), max(0, startY))
                 (endX, endY) = (min(w - 1, endX), min(h - 1, endY))
-				if startX > w or startX == endX:
-					startX = w - 50
-				if startY > h:
-					startY = h - 50
+                if startX > w or startX == endX:
+                    startX = w - 50
+                if startY > h:
+                    startY = h - 50
 		
 
                 # extract the face ROI, convert it from BGR to RGB channel
@@ -104,8 +104,8 @@ class Worker1(QThread):
         dt = 0
         faces_mask= 0
         faces_without_mask = 0
-		color=(0,0,0)
-		label=""
+        color=(0,0,0)
+        label=""
         
         dt_temp = 0
         ni = 0
